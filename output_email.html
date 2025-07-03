@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<style type="text/css">.katex .katex-version:after {content:"0.16.9"}
+.katex .accent .accent-body:not(.accent-full) {width:0}
+.katex .stretchy:after {content:""}
+.katex .stretchy:before {content:""}
+.katex .eqn-num:before {content:"(" counter(katexEqnNo) ")";counter-increment:katexEqnNo}
+.katex .mml-eqn-num:before {content:"(" counter(mmlEqnNo) ")";counter-increment:mmlEqnNo}</style>
+<title>邮件标题</title>
+<style>:not(pre) > code {color:#0082f1;font-family:"Source Code Pro", monospace;font-size:85%;background-color:#f0f0f0;border-radius:6px;font-weight:bolder;padding:0.1em 0.3em}</style>
+</head>
+<body style='counter-reset:katexEqnNo mmlEqnNo; font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.6; color:#333; background-color:#f8f9fa; margin:0; padding:0' bgcolor="#f8f9fa">
+<div class="container" style="max-width:680px; margin:20px auto; padding:20px 40px; border:5px solid #00a549; border-radius:20px; background-color:#fff" bgcolor="#ffffff">
+<h1 style="color:#222; border-bottom:3px solid #FF6D2D; padding-bottom:10px">一份包含代码和公式的报告</h1>
+<p>这是一个演示，展示了如何将Markdown、代码和数学公式转换为一封精美的HTML邮件。</p>
+<h2 style="color:#222">代码高亮</h2>
+<p>下面是一个Python代码示例，它会被 <code>Pygments</code> 自动高亮。</p>
+<pre style="font-size:0.95em; border-radius:10px; padding:1em; overflow-x:auto; background-color:#f5f5f5" bgcolor="#f5f5f5"><code class="language-python"><span style="color: #008000; font-weight: bold">def</span><span style="color: #BBB"> </span><span style="color: #00F">greet</span>(name: <span style="color: #008000">str</span>):
+    <span style="color: #3D7B7B; font-style: italic"># 这只是一个简单的问候函数</span>
+    <span style="color: #008000">print</span>(<span style="color: #BA2121">f"Hello, </span><span style="color: #A45A77; font-weight: bold">{</span>name<span style="color: #A45A77; font-weight: bold">}</span><span style="color: #BA2121">! Welcome to the world of advanced email generation."</span>)
+
+greet(<span style="color: #BA2121">"Developer"</span>)
+</code></pre>
+<h2 style="color:#222">数学公式渲染</h2>
+<p>我们将使用KaTeX来渲染LaTeX公式。</p>
+<p>行内公式，例如爱因斯坦的质能方程 <span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAAAXCAIAAADMYCUxAAAAAXNSR0IArs4c6QAAA/BJREFUWIXtVyFYIlsYPb5vPylMgoKJNJZHuq/ABrCgAQ1igSKvSFGDWOQFMexYxABJim4Qi7ywz6CUHQJD8ZYdgkNZNjgEx+IQuJR5YRwYENbvua5+6/dO4vx3+Oc/c/9z/5kJwzDwpvHbaxfwzGCaIkmKxvqRt6RQl4RkttLq6mebM4FEsXkfNt4MrnKx2Nb5tWEYRud8g5CVTzeGYRhvaQ851qD1WwBw+AgPShsA8M52hVqML+w3vpMikrvMBH56oU/FdKJ0mTB/Mpk2EFwhwIguvT6OEUI2zjv2YOfmci9GFg+/vmDT/QCucpHwxucbkwx3KZNpA+CJz2GPOtwkFuHdLueLbcjToUuZndbqcTbkNvmwQlqrAB4/mbrnmiJr1prH5X7BSp8EXc7nafRAmHVDEUUVDxUqlALwkel7rpZ3SqYzJ72xMP9TilIkkTbNAcb0JhXFHgXTFEkUB+ebDcPLzeJumSRiHqY1aelE1CcfKlRprQUQ4tU0TdNUerRT8PhNv7oD84Hn30ImCekzXS4sLWQuaD6ZzFMdjGaXZlKiSrPJ9Y/1Lpi4M7eQkQZFaqIQDcUL9S6gl9Zn0iKDnE3ul0/WF+bm5uaWkrtnMFtuwv7Wxi5S7/+qTDo9Lg4A9NtW27d9fjD/fWXKUXyzpD8ihYvuFRPTw1GttFbw5tMs88f6mSucOxUCXO9Md0Vyp5k+9+YuBescbxYT8f3u6mkx7gUTU+83K87FQzHtG31r+xlU3SKERHJXFv+81Sedu47x3OhUtz9UDePr4SIhq5/urPCXD0FCtqoDZdmquj6O2flNNbd3+uXOGAd7lypUBkD6JlR1f8gkSv7PfP2RbfrvcAQy6QA0ufYNJOznrNvK9TaCQWJdJYsSnP6AVZV8VGjAEw5b3B1YS0V93MPs97BNfNOEQX8v9VQ8nwYAMOljzb+8Ni4H0zV99FFgV8O5OcfIlXqNwrPMW1bQaKUBPtIbV/SfctsZnrWqUuV6GwiRBx0/Dn2FoychACiFXTV6ODal3pLrze5jN/L8HpoeqVCWpIGKGzUKz3JvXNGLe4FMTO9gW+ABgOe9AzkYYw7H6OdnU0grg5PQ/GtTzKbSf/NCdfxpw3kDIe/Y1cfQpLRtbxxZHBAsi5W2MzxPoBZPEMk54AhF+P2T1i3QG9kX6fVKMCfMji7xHaCW1pIFuXXbBtA6Sc6XzZ7u6mYIcC6mQ2Me0A+DNeVv8CeIld80YagnmPcHXeX6UTrZdq3sxR0ApuLCdi25FlVDPg7d24bKRVMHwngjTrz6Nz7TdXA2iw5zgOlad3LIxab3x5u7j9dX+LPxlr4PR+N/hb8+/gVyXxBs4gyMNwAAAABJRU5ErkJggg==" style="vertical-align: middle; max-width: 100%;"></span>，应该能无缝地融入文本中。</p>
+<p>块级公式则会居中显示，例如著名的高斯积分：</p>
+<p><span><span class="katex-display" style="display:block; margin:1em 0; text-align:center" align="center"><img src="data:image/png;base64,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" style="vertical-align: middle; max-width: 100%;"></span></span></p>
+<p>感谢您的阅读！</p>
+</div>
+<div class="scripts" style="display:none;">
+
+
+
+</div>
+</body>
+</html>
