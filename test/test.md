@@ -2,10 +2,6 @@
 
 这是一个**演示**，*展示*了如何将Markdown、代码和数学公式转换为一封***精美的***HTML邮件。
 
-## 链接
-- [百度](https://www.baidu.com) 指向 https://www.baidu.com
-- [谷歌](https://www.google.com) 指向 https://www.google.com
-
 
 ## 代码高亮
 

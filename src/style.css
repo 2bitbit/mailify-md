@@ -1,0 +1,56 @@
+/* CODE_STYLE: github-dark */
+
+/* 在此输入你的样式，注意：
+    * 不要用过于高级的 CSS 语法；
+    * 不要用 CSS 变量；
+ */
+ .container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px 40px;
+    border: 5px solid #00a549;
+    border-radius: 20px;
+    background-color: #161b22;
+    color: #FFFFFF;
+}
+
+:not(pre)>code {
+    color: #58a6ff;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 85%;
+    background-color: rgba(110, 118, 129, 0.4);
+    border-radius: 6px;
+    font-weight: bolder;
+    padding: .1em .3em;
+}
+
+/* 调整代码块*/
+pre:has(code) {
+    border-radius: 10px;
+    background-color: #0d1117;
+    padding: 2%;
+    overflow-x: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    /* White headings */
+    color: #FFFFFF;
+}
+
+h1 {
+    border-bottom: 3px solid #FF6D2D;
+}
+
+a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
