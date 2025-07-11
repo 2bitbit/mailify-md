@@ -1,0 +1,8 @@
+Pillow
+premailer
+Pygments
+typer
+markdown-it-py
+pygments
+beautifulsoup4
+playwright

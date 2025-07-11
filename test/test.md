@@ -1,11 +1,16 @@
 # 一份包含代码和公式的报告
 
-这是一个**演示**，*展示*了如何将Markdown、代码和数学公式转换为一封***精美的***HTML邮件。
+## 字体展示
+我是一份**演示**，*展示*了如何将Markdown、代码和数学公式转换为一封***精美的***HTML邮件。
+
+## 图片
+![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+<img src="./33.jpg" alt="33" width="200"/>
+![33](./33.jpg)
 
 
 ## 代码高亮
-
-下面是2个代码示例，它会被 `Pygments` 自动高亮。
 
 ```python
 def greet(name: str):
@@ -21,7 +26,7 @@ const c = a + b;
 console.log(`c: ${c}`);
 ```
 
-语言未知
+语言未知：`unknown-language`
 ```unknown-language
 println("Hello, World!")
 ```
@@ -35,9 +40,6 @@ println("Hello, World!")
 质能方程 $E=mc^2$ 是爱因斯坦的著名公式。
 
 著名的高斯积分：
-$$
-\\int_{-\\infty}^{\\infty} e^{-x^2} dx = \\sqrt{\\pi}
-$$
+$$ \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi} $$
 
-## md中html的支持
-<p style="text-align: center;color: green;">这是内联居中的文字</p>
+<p style="text-align: center;color: green;font-size: 1em;">md中html的支持--感谢观看</p>

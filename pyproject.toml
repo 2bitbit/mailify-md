@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project] 
+name = "mailify-md"
+version = "0.1.0"
+description = "一个将 Markdown 文件转换为适合电子邮件的 HTML 的工具，并支持自定义 CSS \n A tool that converts one Markdown file into HTML suitable for emails, with support for custom CSS."
+
+[project.scripts]
+mailify-md = "mailify_md.cli:main_entry"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"mailify_md" = ["**/*"]

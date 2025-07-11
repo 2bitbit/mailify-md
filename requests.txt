@@ -1,6 +1,0 @@
-markdown-it-py
-pygments
-beautifulsoup4
-playwright
-premailer
-Pillow

@@ -1,10 +1,11 @@
 /* CODE_STYLE: github-dark */
+/* 可以将':'后的内容替换为其他 pygments.formatters.HtmlFormatter 参数 style 支持的样式 */
 
 /* 在此输入你的样式，注意：
     * 不要用过于高级的 CSS 语法；
     * 不要用 CSS 变量；
  */
-.container {
+.md_content_to_mailify {
     max-width: 80%;
     margin: 20px auto;
     padding: 20px 40px;
@@ -53,4 +54,10 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* 代码块内的代码不要有行内代码的灰框 */
+div.container pre>code {
+    background-color: transparent;
+    font-weight: 600;
 }
