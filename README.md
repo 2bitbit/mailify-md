@@ -15,13 +15,13 @@ playwright install --with-deps
 
 ## 快速开始
 ```bash
-# 将 test.md 转换为 test.html
+# 用法一: 在原目录下生成同名 .html 文件
 mailify-md test.md
 
-# 指定输出目录, 默认在输入文件同目录下生成同名 .html 文件
+# 用法二: 在指定输出目录下生成同名 .html 文件
 mailify-md test.md ./output/
 
-# 指定输出文件名
+# 用法三: 指定输出文件名字和路径
 mailify-md test.md ./output/email.html
 ```
 
