@@ -1,0 +1,45 @@
+<svg fill="none" width="800" height="120" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                /* 动画和样式现在在 SVG 内部，GitHub 会正确渲染它们 */
+                @keyframes gradient-flow {
+                    0% { background-position: 0% 50%; }
+                    50% { background-position: 100% 50%; }
+                    100% { background-position: 0% 50%; }
+                }
+
+                .container {
+                    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+                    font-style: italic;
+                    font-weight: bold;
+                    font-size: 28px;
+                    text-align: center;
+                    line-height: 1.6;
+                    margin: 0;
+                    padding: 20px 0;
+                    height: 100%;
+                    width: 100%;
+
+                    /* 核心效果 */
+                    background: linear-gradient(
+                        270deg,
+                        #ff8a00,
+                        #e52e71,
+                        #4a90e2,
+                        #43e97b
+                    );
+                    background-size: 400% 400%;
+                    animation: gradient-flow 1s ease infinite;
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+                }
+            </style>
+            <div class="container">
+                听说你要给心仪的老登写邮件？<br/>
+                还不快用 <span class="highlight">mailify-md</span> 炫染你的E妹儿，多种花样送给亲。
+            </div>
+        </div>
+    </foreignObject>
+</svg>

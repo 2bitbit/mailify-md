@@ -8,24 +8,25 @@ BUILTINS_DIR = DATA_DIR / "builtins"
 MAIN_CONTAINER_CLASS = "md_content_to_mailify"
 
 # region: BUILT_IN_CSS
-BUILT_IN_CSS = [
-    (BUILTINS_DIR / "katex.inlined.css").read_text(encoding="utf-8"),
-]
+BUILT_IN_CSS = "\n".join(
+    [
+        (BUILTINS_DIR / "katex.inlined.css").read_text(encoding="utf-8"),
+    ]
+)
 # endregion
 
 # region: BUILT_IN_JS
-BUILT_IN_JS = [
-    (BUILTINS_DIR / "katex.min.js").read_text(encoding="utf-8"),
-    (BUILTINS_DIR / "auto-render.min.js").read_text(encoding="utf-8"),
-    (BUILTINS_DIR / "base.js").read_text(encoding="utf-8"),
-]
+BUILT_IN_JS = "\n".join(
+    [
+        (BUILTINS_DIR / "katex.min.js").read_text(encoding="utf-8"),
+        (BUILTINS_DIR / "auto-render.min.js").read_text(encoding="utf-8"),
+        (BUILTINS_DIR / "base.js").read_text(encoding="utf-8"),
+    ]
+)
 # endregion
 
 
 # region: HTML_TEMPLATE
-"""
-theme_css 是主题css, theme_style和code_style从中解析。
-"""
 HTML_TEMPLATE = """
 <!DOCTYPE html>
 <html lang="zh-CN">

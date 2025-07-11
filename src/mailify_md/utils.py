@@ -1,40 +1,18 @@
 import logging
-from typing import Optional, Tuple
-from PIL import Image
-import io,base64
-from bs4 import BeautifulSoup, Tag
+from typing import Optional
+import re
 
 
-# region: 图像处理
-def trim_image_by_color(image_bytes: bytes, background_color: list[int]) -> Tuple[bytes, int]:
+# region: 工具函数
+def contains_web_links(md_text: str) -> bool:
     """
-    通过将像素与指定的RGBA背景色进行对比，来精确裁剪图像的空白。
-    return: 新的图像字节, 裁切后的物理像素宽度。
+    检查Markdown文本是否包含Web链接
     """
-    img = Image.open(io.BytesIO(image_bytes)).convert("RGBA")
-    pixels = img.load()
-    if not pixels:
-        raise ValueError("图像加载失败")
-    background_color_tuple = tuple(background_color)
-    
-
-    width, height = img.size
-    left, top, right, bottom = width, height, -1, -1
-
-    # 遍历所有像素，求出公式内容所在的大致矩形
-    for y in range(0, height, 2):  # 只是差 2 个像素，速度却快了2倍
-        for x in range(0, width, 2):
-            if pixels[x, y] != background_color_tuple:
-                left, top, right, bottom = min(left, x), min(top, y), max(right, x), max(bottom, y)
-
-    # 略微扩展边界框，并确保坐标在图像范围内
-    left, top, right, bottom = max(0, left - 2), max(0, top - 2), min(width - 1, right + 2), min(height - 1, bottom + 2)
-
-    trimmed_image = img.crop((left, top, right + 1, bottom + 1))  # 裁切图像 (crop的右下角坐标是开区间)
-
-    buffer = io.BytesIO()
-    trimmed_image.save(buffer, format="PNG")
-    return buffer.getvalue(), trimmed_image.size[0]
+    # 移除Markdown格式的图片 `![alt](url)`
+    text_without_md_images = re.sub(r"!\[.*?\]\(.*?\)", "", md_text.strip())
+    # 移除HTML格式的图片 `<img ...>`
+    text_without_any_images = re.sub(r"<img[^>]*>", "", text_without_md_images, flags=re.IGNORECASE)
+    return bool(re.search(r"https?://", text_without_any_images))
 
 
 # endregion
@@ -70,4 +48,3 @@ def logging_debug_decorator(func):
 
 log = logging_debug_decorator(logging.debug)
 # endregion
-

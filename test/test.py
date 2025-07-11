@@ -34,22 +34,41 @@ def init():
 
 
 def main():
-    from mailify_md.cli import main
+    from mailify_md import mailify_md
 
     md_file_path = Path(TEST_PATH / "test.md")
-    directly_run_html_path = TEST_PATH / "directly_run" / "test_directly_run.html"
-    cli_run_html_path = TEST_PATH / "cli_run" / "test_cli_run.html"
-    python_run_html_path = TEST_PATH / "python_run" / "test_python_run.html"
-    # theme = ??
+    CONFIG = {
+        "-t": None,
+    }
 
-    print("直接运行".ljust(150, "-"))
-    main(md_file_path, directly_run_html_path)
-    print("python 运行".ljust(150, "-"))
-    subprocess.run(["python", "-m", "mailify_md", str(md_file_path), str(python_run_html_path)], check=True)
-    print("cli 运行".ljust(150, "-"))
-    subprocess.run(["mailify-md", str(md_file_path), str(cli_run_html_path)], check=True)
+    def test_directly_run():
+        directly_run_html_path = TEST_PATH / "directly_run" / "test_directly_run.html"
+        print("直接运行".ljust(100, "-"))
+        mailify_md(md_file_path, directly_run_html_path, *(v for v in CONFIG.values() if v))
+        return directly_run_html_path.read_text()
 
-    if python_run_html_path.read_text() == cli_run_html_path.read_text() == directly_run_html_path.read_text():
+    def test_python_run():
+        print("python 运行".ljust(100, "-"))
+        python_run_html_path = TEST_PATH / "python_run" / "test_python_run.html"
+        subprocess.run(
+            ["python", "-m", "mailify_md", str(md_file_path), str(python_run_html_path)]
+            + [str(i) for tup in CONFIG.items() if tup[1] for i in tup],
+            check=True,
+        )
+        return python_run_html_path.read_text()
+
+    def test_cli_run():
+        cli_run_html_path = TEST_PATH / "cli_run" / "test_cli_run.html"
+
+        print("cli 运行".ljust(100, "-"))
+        subprocess.run(
+            ["mailify-md", str(md_file_path), str(cli_run_html_path)]
+            + [str(i) for tup in CONFIG.items() if tup[1] for i in tup],
+            check=True,
+        )
+        return cli_run_html_path.read_text()
+
+    if test_directly_run() == test_python_run() == test_cli_run():
         print("运行结果: html 文件内容一致。")
     else:
         raise Exception("运行结果: html 文件内容不一致。")

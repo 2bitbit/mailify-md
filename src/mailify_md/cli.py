@@ -16,6 +16,7 @@ def main(
             file_okay=True,
             dir_okay=False,
             readable=True,
+            writable=True,
             help="待修改的.md文件路径",
         ),
     ],
