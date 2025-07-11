@@ -1,6 +1,9 @@
 # mailify-md
-
+## 简介
 轻松将md文件转化为邮箱环境渲染后的html文件
+
+<img src="./rsc/light_demo.gif" alt="light_demo">
+<img src="./rsc/dark_demo.gif" alt="dark_demo">
 
 ## 安装
 ```bash
