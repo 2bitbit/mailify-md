@@ -1,43 +1,43 @@
-[build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "mailify-md"
-version = "0.1.0"
-authors = [{ name = "2bitbit" }]
-description = "一个将 Markdown 文件转换为适合电子邮件的 HTML 的工具，并支持自定义 CSS \n A tool that converts one Markdown file into HTML suitable for emails, with support for custom CSS."
-readme = "README.md"
-license = { file = "LICENSE" }
-requires-python = ">=3.10"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Topic :: Text Processing :: Markup :: HTML",
-    "Topic :: Utilities",
-]
-dependencies = [
-    "cairosvg",
-    "requests",
-    "premailer",
-    "Pygments",
-    "typer[all]",
-    "markdown-it-py[linkify,plugins]",
-    "beautifulsoup4",
-    "playwright",
-]
-keywords = ["markdown", "email", "html", "converter", "katex"]
-
-[project.urls]
-Homepage = "https://github.com/2bitbit/mailify-md"
-"Bug Tracker" = "https://github.com/2bitbit/mailify-md/issues"
-
-[project.scripts]
-mailify-md = "mailify_md.cli:main_entry"
-
-[tool.setuptools.packages.find]
-where = ["src"]
-
-[tool.setuptools.package-data]
-"mailify_md" = ["**/*"]
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mailify-md"
+version = "0.1.2"
+authors = [{ name = "2bitbit" }]
+description = "一个将 Markdown 文件转换为适合电子邮件的 HTML 的工具，并支持自定义 CSS \n A tool that converts one Markdown file into HTML suitable for emails, with support for custom CSS."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: Markup :: HTML",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "cairosvg",
+    "requests",
+    "premailer",
+    "Pygments",
+    "typer[all]",
+    "markdown-it-py[linkify,plugins]",
+    "beautifulsoup4",
+    "playwright",
+]
+keywords = ["markdown", "email", "html", "converter", "katex"]
+
+[project.urls]
+Homepage = "https://github.com/2bitbit/mailify-md"
+"Bug Tracker" = "https://github.com/2bitbit/mailify-md/issues"
+
+[project.scripts]
+mailify-md = "mailify_md.cli:main_entry"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"mailify_md" = ["**/*"]
