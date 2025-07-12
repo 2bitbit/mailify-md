@@ -18,7 +18,7 @@ def update_version(
     part_to_bump: Annotated[str, Argument(help="The part of the version to bump: patch, minor, or major")],
 ):
     result = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True, encoding="utf-8")
-    if result.stdout:
+    if result.stdout.strip():
         print("存在未提交的更改，请先提交后再运行此脚本。", file=sys.stderr)
         sys.exit(1)
 
