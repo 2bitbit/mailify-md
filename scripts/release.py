@@ -30,8 +30,11 @@ def update_version(
             new_version = f"{lst[0]}.{int(lst[1]) + 1}.0"
         case "major":
             new_version = f"{int(lst[0]) + 1}.0.0"
+            
+    def git_commit():
+        subprocess.run(["git", "commit", "-m", f"bump version to v{new_version}"], check=True)
 
-    def update_git_tag():
+    def git_tag():
         subprocess.run(["git", "tag", f"v{new_version}"], check=True)
 
     def update_pyproject_version():
@@ -44,7 +47,8 @@ def update_version(
 
     try:
         update_pyproject_version()
-        update_git_tag()
+        git_commit()
+        git_tag()
         push_tag_to_remote()
         print(f"Version bumped from {CUR_VERSION} to {new_version}")
 
