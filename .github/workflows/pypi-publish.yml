@@ -4,7 +4,7 @@ on:
   push:
     tags:
       - 'v*'
-  workflow_dispatch: # 添加此行，获取 GitHub 页面 Actions状态红黄绿灯
+  workflow_dispatch: # 添加此行，允许手动触发
 
 jobs:
   deploy:
