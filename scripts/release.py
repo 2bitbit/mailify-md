@@ -32,6 +32,7 @@ def update_version(
             new_version = f"{int(lst[0]) + 1}.0.0"
             
     def git_commit():
+        subprocess.run(["git", "add", "./pyproject.toml"], check=True)
         subprocess.run(["git", "commit", "-m", f"bump version to v{new_version}"], check=True)
 
     def git_tag():
