@@ -43,4 +43,14 @@ println("Hello, World!")
 质能方程 $E=mc^2$ 是爱因斯坦的著名公式。
 $$\text{著名的高斯积分: } \quad \int_{-\infty}^{+\infty} e^{-x^2} \, dx = \sqrt{\pi} $$
 
-<p style="text-align: center;color: green;font-size: 1em;">md中html的支持--感谢观看</p>
+## md中html的支持
+
+<p align="center" style="font-size: 1em; font-style: italic; background: linear-gradient(270deg, #ff8a00, #e52e71, #4a90e2, #43e97b); color: transparent; background-clip: text; font-weight: bold; margin: 4em 0;">
+
+听说你要心仪的老登写邮件？<br> 还不快用
+<span style="text-shadow: 0 0 10px rgb(250, 171, 0), 0 0 3px rgb(54, 51, 0);">mailify-md</span>
+炫染你的E妹儿，多种花样送给亲。
+
+</p>
+
+<p style="text-align: center;color: green;font-size: 1em;">感谢观看</p>
