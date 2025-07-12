@@ -9,7 +9,7 @@
 ```bash
 # 安装包
 pip install mailify-md
-# 安装浏览器依赖:
+# 安装浏览器依赖
 playwright install --with-deps
 ```
 
@@ -24,6 +24,7 @@ mailify-md test.md ./output/
 # 用法三: 指定输出文件名字和路径
 mailify-md test.md ./output/email.html
 ```
+之后复制 html 文件内容, 粘贴为邮件的 HTML 源码即可
 
 ## 功能特色
 - 结果美观:
@@ -40,13 +41,14 @@ mailify-md test.md ./output/email.html
 
 ## 命令行用法
 
-`mailify-md [OPTIONS] INPUT_PATH [OUTPUT_PATH]`
+`mailify-md INPUT_PATH [OUTPUT_PATH] [OPTIONS]`
 
 **参数:**
 - `INPUT_PATH`:  必须项，你的 Markdown 文件路径。
-- `OUTPUT_PATH`: 可选项，可以是输出目录或完整的文件路径。
-  - 如果是目录，则输出文件名与输入文件相同。
-  - 如果省略，则输出在输入文件旁边。
+- `OUTPUT_PATH`: 可选项，可以是:
+  - 省略: 在输入文件目录下输出html文件。
+  - 目录: 在指定目录下输出同名html文件。
+  - 完整文件路径。
 
 **可选项:**
 - `-t, --theme TEXT`:  设置主题。可以是 `light`, `dark`, 或一个自定义 CSS 文件的路径。
@@ -61,11 +63,16 @@ mailify-md test.md ./output/email.html
 
 
 
-<!-- 
+## 附赠--炫酷html标签模板
+```
 <p align="center" style="font-size: 1em; font-style: italic; background: linear-gradient(270deg, #ff8a00, #e52e71, #4a90e2, #43e97b); color: transparent; background-clip: text; font-weight: bold; margin: 4em 0;">
-听说你要心仪的老登写邮件？<br>
-还不快用 <span style="text-shadow: 0 0 1px rgb(250, 171, 0), 0 0 0px rgb(254, 51, 0);">mailify-md</span> 炫染你的E妹儿，多种花样送给亲。
-</p> -->
+
+听说你要心仪的老登写邮件？<br> 还不快用
+<span style="text-shadow: 0 0 10px rgb(250, 171, 0), 0 0 3px rgb(54, 51, 0);">mailify-md</span>
+炫染你的E妹儿，多种花样送给亲。
+
+</p>
+```
 
 <p align="center">
     <img src="./rsc/demo.svg" alt="demo" style="max-height: 50px;">
