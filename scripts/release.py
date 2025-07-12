@@ -6,7 +6,7 @@ from typer import Argument, Typer
 from pathlib import Path
 
 PYPROJECT_TOML_PATH = Path(__file__).parent.parent / "pyproject.toml"
-with PYPROJECT_TOML_PATH.open("rb") as f:
+with PYPROJECT_TOML_PATH.open("r") as f:
     TOML_DATA = tomlkit.load(f)
 CUR_VERSION: str = TOML_DATA["project"]["version"]  # type: ignore
 
@@ -37,7 +37,7 @@ def update_version(
     def update_pyproject_version():
         TOML_DATA["project"]["version"] = new_version  # type: ignore
         with PYPROJECT_TOML_PATH.open("w", encoding="utf-8") as f:
-            f.write(tomlkit.dumps(TOML_DATA))
+            tomlkit.dump(TOML_DATA, f)
 
     def push_tag_to_remote():
         subprocess.run(["git", "push", "origin", f"v{new_version}"], check=True)
